@@ -1,8 +1,20 @@
-const express = require('express');
-const { register, login } = require('../controllers/authController');
+import { Router } from 'express'
+import { login, logout, getUser } from '../controllers/authControler.js'
+import { check } from 'express-validator'
+import authMiddleware from '../middlewares/authMiddleware.js'
 
-const router = express.Router();
-router.post('/register', register);
-router.post('/login', login);
+const router = Router()
 
-module.exports = router;
+router.post(
+  '/login',
+  [
+    check('usuario', 'El usuario es obligatorio 😒').not().isEmpty(),
+    check('password', 'El password es obligatorio 😁').not().isEmpty()
+  ],
+  login
+)
+
+router.post('/logout', logout)
+router.get('/user', authMiddleware, getUser)
+
+export default router

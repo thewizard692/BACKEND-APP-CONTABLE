@@ -13,17 +13,10 @@ class EmpleadoRepository {
     }
 
     const empleadoRef = await db.collection('empleados').add({
-      nombre: data.nombre,
-      apaterno: data.apaterno,
-      amaterno: data.amaterno,
-      direccion: data.direccion,
-      telefono: data.telefono,
-      ciudad: data.ciudad,
-      estado: data.estado || null,
       usuario: data.usuario,
+      telefono: data.telefono,
       password: data.password,
-      rol: data.rol || null,
-      imagen: data.imagen || null, // Manejar imagen si no existe
+      rol: data.rol,
     });
   
     return empleadoRef.id;

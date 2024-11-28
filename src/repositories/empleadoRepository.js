@@ -5,7 +5,7 @@ class EmpleadoRepository {
   // Corregido: Evita declarar de nuevo la variable 'empleado' dentro del método
   async createEmpleado(data) {
     // Asegúrate de que no haya campos undefined
-    const fields = ['nombre', 'direccion', 'telefono', 'usuario', 'password', 'apaterno', 'ciudad', 'rol', 'amaterno', 'estado'];
+    const fields = ['usuario','telefono', 'password', 'observaciones'];
     for (const field of fields) {
       if (data[field] === undefined || data[field] === null) {
         throw new Error(`El campo ${field} es obligatorio.`);
@@ -13,17 +13,10 @@ class EmpleadoRepository {
     }
 
     const empleadoRef = await db.collection('empleados').add({
-      nombre: data.nombre,
-      apaterno: data.apaterno,
-      amaterno: data.amaterno,
-      direccion: data.direccion,
-      telefono: data.telefono,
-      ciudad: data.ciudad,
-      estado: data.estado || null,
       usuario: data.usuario,
+      telefono: data.telefono,
       password: data.password,
-      rol: data.rol || null,
-      imagen: data.imagen || null, // Manejar imagen si no existe
+      observaciones: data.observaciones || null
     });
   
     return empleadoRef.id;
@@ -45,17 +38,10 @@ class EmpleadoRepository {
       empleados.push(
         new EmpleadoModel(
           doc.id,
-          data.nombre,
-          data.apaterno,
-          data.amaterno,
-          data.direccion,
-          data.telefono,
-          data.ciudad,
-          data.estado,
           data.usuario,
+          data.telefono,
           data.password,
-          data.rol,
-          data.imagen
+          data.observaciones
         )
       );
     });
@@ -72,17 +58,10 @@ class EmpleadoRepository {
     const data = doc.data();
     return new EmpleadoModel(
       doc.id,
-      data.nombre,
-      data.apaterno,
-      data.amaterno,
-      data.direccion,
-      data.telefono,
-      data.ciudad,
-      data.estado,
       data.usuario,
+      data.telefono,
       data.password,
-      data.rol,
-      data.imagen
+      data.observaciones
     );
   }
 
@@ -101,17 +80,10 @@ class EmpleadoRepository {
     const data = doc.data();
     return new EmpleadoModel(
       doc.id,
-      data.nombre,
-      data.apaterno,
-      data.amaterno,
-      data.direccion,
-      data.telefono,
-      data.ciudad,
-      data.estado,
       data.usuario,
+      data.telefono,
       data.password,
-      data.rol,
-      data.imagen
+      data.observaciones
     );
   }
 
@@ -123,17 +95,10 @@ class EmpleadoRepository {
       empleados.push(
         new EmpleadoModel(
           doc.id,
-          data.nombre,
-          data.apaterno,
-          data.amaterno,
-          data.direccion,
-          data.telefono,
-          data.ciudad,
-          data.estado,
           data.usuario,
+          data.telefono,
           data.password,
-          data.rol,
-          data.imagen
+          data.observaciones
         )
       );
     });

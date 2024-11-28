@@ -12,7 +12,7 @@ export const login = async (req, res) => {
     if (!user) {
       return res.status(401).json({
         error: true,
-        message: 'Usuario no existe🤡'
+        message: 'Usuario no existe'
       });
     }
 
@@ -21,7 +21,7 @@ export const login = async (req, res) => {
     if (!isValid) {
       return res.status(401).json({
         error: true,
-        message: 'La contraseña es incorrecta 😒'
+        message: 'La contraseña es incorrecta'
       });
     }
 
@@ -39,7 +39,7 @@ export const login = async (req, res) => {
     // Agregar return aquí para evitar otro intento de respuesta
     return res.status(500).json({
       error: true,
-      message: 'Error: 😢' + error.message
+      message: 'Error:' + error.message
     });
   }
 };
@@ -47,7 +47,7 @@ export const login = async (req, res) => {
 export const logout = (req, res) => {
   res.json({
     error: false,
-    message: 'Sesión cerrada con éxito😌'
+    message: 'Sesión cerrada con éxito'
   });
 };
 
@@ -58,13 +58,13 @@ export const getUser = async (req, res) => {
     (userId)
 
     if (!user) {
-      return res.status(404).json({ msg: 'Usuario no encontrado🐓 '})
+      return res.status(404).json({ msg: 'Usuario no encontrado'})
     }
     const { password, ...userWithoutPassword } = user
     res.json(userWithoutPassword)
   } catch (error) {
     console.error(error)
-    res.status(500).json({ msg: 'Error al obtener Usuario😢'})
+    res.status(500).json({ msg: 'Error al obtener Usuario'})
   }
 }
 

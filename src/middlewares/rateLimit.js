@@ -12,7 +12,7 @@ const rateLimitMiddleware = (req, res, next) => {
     })
     .catch(() => {
       res.status(429).json({
-        message: 'Muchas peticiones... no la jodas😒'
+        message: 'Muchas peticiones...'
       })
     })
 }

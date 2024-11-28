@@ -22,7 +22,6 @@ router.post(
   //aqui va el middleware
   upload.single('imagen'),
   [
-    check('nombre').notEmpty().withMessage('El nombre es obligatorio'),
     check('usuario').notEmpty().withMessage('El usuario es obligatorio'),
     check('password').isLength({ min: 6 }).withMessage('La contraseña es de minimo 6 cracteres'),
   ],

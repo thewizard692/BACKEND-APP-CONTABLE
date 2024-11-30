@@ -28,11 +28,11 @@ router.post(
   createEmpleado
 )
 
-router.put('/update/:id', authMiddleware, upload.single('imagen'), updateEmpleado )
-router.delete('/delete/:id', authMiddleware, deleteEmpleado)
-router.get('/', authMiddleware, getAllEmpleados)
-router.get('/empleado/:id', authMiddleware, getEmpleadoById)
-router.get('/rol/:rol', authMiddleware, getEmpleadoByRol)
-router.get('/usuario/:usuario', authMiddleware, getEmpleadoByUsername)
+router.put('/update/:id', upload.single('imagen'), updateEmpleado )
+router.delete('/delete/:id', deleteEmpleado)
+router.get('/', getAllEmpleados)
+router.get('/empleado/:id', getEmpleadoById)
+router.get('/rol/:rol', getEmpleadoByRol)
+router.get('/usuario/:usuario', getEmpleadoByUsername)
 
 export default router

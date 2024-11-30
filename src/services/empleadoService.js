@@ -23,6 +23,7 @@ class EmpleadoService {
       data.usuario,
       data.telefono,
       hashedPass,
+      data.observaciones,
       data.rol,
       null
     )

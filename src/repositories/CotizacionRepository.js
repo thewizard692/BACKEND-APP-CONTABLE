@@ -3,7 +3,7 @@ import CotizacionModel from '../models/CotizacionModel.js';
 
 class CotizacionRepository {
   async createCotizacion(data) {
-    const fields = ['numero', 'cliente', 'creacion', 'estado', 'total'];
+    const fields = ['numero', 'cliente', 'creacion', 'vencimiento', 'estado', 'total', 'referencia', 'descripcion', 'nota', 'cantidad'];
     for (const field of fields) {
       if (data[field] === undefined || data[field] === null) {
         throw new Error(`El campo ${field} es obligatorio.`);
@@ -14,8 +14,13 @@ class CotizacionRepository {
       numero: data.numero,
       cliente: data.cliente,
       creacion: data.creacion,
+      vencimiento: data.vencimiento,
       estado: data.estado,
       total: data.total,
+      referencia: data.referencia,
+      descripcion: data.descripcion,
+      nota: data.nota,
+      cantidad: data.cantidad
     });
 
     return cotizacionRef.id;
@@ -40,8 +45,13 @@ class CotizacionRepository {
           data.numero,
           data.cliente,
           data.creacion,
+          data.vencimiento,
           data.estado,
-          data.total
+          data.total,
+          data.referencia,
+          data.descripcion,
+          data.nota,
+          data.cantidad
         )
       );
     });
@@ -61,8 +71,13 @@ class CotizacionRepository {
       data.numero,
       data.cliente,
       data.creacion,
+      data.vencimiento,
       data.estado,
-      data.total
+      data.total,
+      data.referencia,
+      data.descripcion,
+      data.nota,
+      data.cantidad
     );
   }
 
@@ -83,8 +98,13 @@ class CotizacionRepository {
       data.numero,
       data.cliente,
       data.creacion,
+      data.vencimiento,
       data.estado,
-      data.total
+      data.total,
+      data.referencia,
+      data.descripcion,
+      data.nota,
+      data.cantidad
     );
   }
 }

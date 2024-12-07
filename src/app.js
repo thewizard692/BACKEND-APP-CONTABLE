@@ -19,7 +19,7 @@ app.use(cors(corsOptions))
 app.use('/api/v1', routes)
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 3020
+const PORT = process.env.PORT 
 app.listen(PORT, () => {
   console.log(`Servidor Trabajando🌋: ${PORT}`)
 })

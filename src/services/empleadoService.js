@@ -21,9 +21,10 @@ class EmpleadoService {
     const newEmpleados = new EmpleadoModel (
       null,
       data.usuario,
+      data.usuario,
       data.telefono,
-      data.password,
       hashedPass,
+      data.observaciones,
       data.rol,
       null
     )

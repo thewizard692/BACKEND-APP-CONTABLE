@@ -88,7 +88,7 @@ const getEmpleadoById = async (req, res) => {
     if (!empleado) {
       return res.status(404).json({
         success: false,
-        message: 'Empleado not Found💀',
+        message: 'Empleado not Found',
       });
     }
     res.status(201).json({
@@ -111,7 +111,7 @@ const getEmpleadoByUsername = async (req, res) => {
     if (!empleado) {
       return res.status(404).json({
         success: false,
-        message: 'Empleado not Found💀',
+        message: 'Empleado not Found',
       });
     }
     res.status(201).json({
@@ -134,7 +134,7 @@ const getEmpleadoByRol = async (req, res) => {
     if (!empleado) {
       return res.status(404).json({
         success: false,
-        message: 'Empleado not Found💀',
+        message: 'Empleado not Found',
       });
     }
     res.status(201).json({

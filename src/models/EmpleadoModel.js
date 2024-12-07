@@ -1,9 +1,10 @@
 class EmpleadoModel {
-  constructor(usuario, telefono, password, rol) {
-    this.usuario = usuario,  
+  constructor(id, usuario, telefono, password, observaciones) {
+    this.id = id,
     this.telefono = telefono, 
-    this.password = password, 
-    this.rol = rol
+    this.usuario = usuario, 
+    this.password = password,
+    this.observaciones = observaciones
   }
 }
 

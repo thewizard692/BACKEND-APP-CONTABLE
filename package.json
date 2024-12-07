@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backen-empresa": "file:",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "cours": "^1.0.0",

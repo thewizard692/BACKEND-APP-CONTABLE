@@ -3,9 +3,9 @@ class EmpleadoInterface {
  updateEmpleado(id,data) {}
  deleteEmpleado(id) {}
  getAllEmpleado() {}
- getEmpleadoById (id) {}
- getEmpleadoByUsuario (usuario) {}
- getEmpleadoByRol (rol) {}
+ gerEmpleadoById (id) {}
+ gerEmpleadoByUsuario (usuario) {}
+ gerEmpleadoByRol (rol) {}
 }
 
 export default EmpleadoInterface

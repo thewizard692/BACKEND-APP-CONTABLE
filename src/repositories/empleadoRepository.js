@@ -14,7 +14,6 @@ class EmpleadoRepository {
 
     const empleadoRef = await db.collection('empleados').add({
       usuario: data.usuario,
-      usuario: data.usuario,
       telefono: data.telefono,
       password: data.password,
       observaciones: data.observaciones || null
